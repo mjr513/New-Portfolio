@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="dark"/>
-  <title>Milo Roban — Synthwave Portfolio</title>
+  <title>Milo Roban — Portfolio</title>
   <style>
     /* =========================
        SYNTHWAVE THEME (NO LIBS)
@@ -677,7 +677,7 @@
         <div class="logoMark" aria-hidden="true"></div>
         <div class="brandText">
           <b id="brandName">MILO ROBAN</b>
-          <span id="brandLine">SYNTHWAVE PORTFOLIO UI</span>
+          <span id="brandLine"></span>
         </div>
       </a>
 
@@ -1057,7 +1057,7 @@
     function initHero(){
       $("#brandName").textContent = CONFIG.person.name.toUpperCase();
       $("#heroTitle").textContent = CONFIG.person.name;
-      $("#brandLine").textContent = "SYNTHWAVE PORTFOLIO UI • " + CONFIG.person.location.toUpperCase();
+      $("#brandLine").textContent = " " + CONFIG.person.location.toUpperCase();
       $("#heroBadges").innerHTML = [
         `<span class="badge"><i></i>${escapeHtml(CONFIG.person.tagline)}</span>`,
         `<span class="badge"><i style="background:var(--neonB); box-shadow:0 0 12px rgba(0,229,255,0.55)"></i>${escapeHtml(CONFIG.person.location)}</span>`
