@@ -1211,16 +1211,62 @@
 
       $("#modalDesc").textContent = project.blurb || "";
 
-      // Image
-      const preview = $("#modalPreview");
-      const img = $("#modalImg");
-      if (project.image){
-        img.src = project.image;
-        preview.classList.add("hasImg");
-      } else {
-        img.removeAttribute("src");
-        preview.classList.remove("hasImg");
-      }
+     // Preview (iframe first, otherwise auto screenshot image)
+const preview = $("#modalPreview");
+const img = $("#modalImg");
+const frame = $("#modalFrame");
+
+// pick an embed url: project.embed OR first link url
+const embedUrl =
+  project.embed ||
+  (project.links && project.links[0] && project.links[0].url && project.links[0].url !== "#"
+    ? project.links[0].url
+    : "");
+
+// reset
+preview.classList.remove("hasImg", "hasFrame");
+img.removeAttribute("src");
+frame.removeAttribute("src");
+
+// If we have a URL, try iframe. If it gets blocked, fall back to screenshot image.
+if (embedUrl){
+  // Try iframe
+  frame.src = embedUrl;
+  preview.classList.add("hasFrame");
+
+  // Fallback screenshot image (works even when sites block iframe)
+  // NOTE: This is a public thumbnail service. If you don't want external services, tell me and I'll give another option.
+  const shot = `https://s.wordpress.com/mshots/v1/${encodeURIComponent(embedUrl)}?w=1200`;
+
+  // If iframe fails to load or is blocked, show screenshot
+  frame.onerror = () => {
+    frame.removeAttribute("src");
+    preview.classList.remove("hasFrame");
+    img.src = shot;
+    preview.classList.add("hasImg");
+  };
+
+  // Also set a timed fallback (because blocked iframes often don't trigger onerror)
+  setTimeout(() => {
+    // If still showing iframe but it’s blank/blocked, user will see nothing.
+    // Force showing screenshot as a “preview” instead of a blank box.
+    if (preview.classList.contains("hasFrame")){
+      // swap to screenshot preview
+      frame.removeAttribute("src");
+      preview.classList.remove("hasFrame");
+      img.src = shot;
+      preview.classList.add("hasImg");
+    }
+  }, 1200);
+
+} else {
+  // No URL, use your manual image if provided
+  if (project.image){
+    img.src = project.image;
+    preview.classList.add("hasImg");
+  }
+}
+
 
       // Links
       const links = (project.links || []).filter(l => l && l.url && l.url !== "#");
