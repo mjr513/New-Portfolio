@@ -811,9 +811,11 @@
       </div>
       <div class="modalBody">
         <div class="preview" id="modalPreview">
-          <img id="modalImg" alt="Project image preview"/>
-          <div class="gridlines" aria-hidden="true"></div>
-        </div>
+  <iframe id="modalFrame" title="Project preview" loading="lazy"></iframe>
+  <img id="modalImg" alt="Project image preview"/>
+  <div class="gridlines" aria-hidden="true"></div>
+</div>
+
         <div>
           <h3 class="modalTitle" id="modalTitle">Title</h3>
           <div class="modalMeta" id="modalMeta"></div>
@@ -950,18 +952,16 @@
       // Tip: Use 'image' for a thumbnail (local file path or URL). Otherwise it uses a neon abstract preview.
       projects: [
         {
-          title: "Cinematic Campaign Poster Series",
-          category: "Graphic Design",
-          tags: ["Branding", "Print", "Color Grade"],
-          year: "2026",
-          blurb: "A movie-poster-inspired campaign graphic system: typography hierarchy, atmosphere, and cinematic grading.",
-          image: "",
-          links: [
-            { label: "Case Study", url: "#" },
-            { label: "Final Exports", url: "#" }
-          ],
-          spotlight: "hot"
-        },
+  title: "Entertainment Law Partners Website",
+  category: "Web Design",
+  tags: ["Web Design", "UI/UX", "Responsive"],
+  year: "2025",
+  blurb: "Website redesign for an entertainment law firm focused on clean typography, strong visual hierarchy, and a polished professional presence across devices.",
+  image: "",
+  embed: "https://entlawpartners.com/",
+  spotlight: "hot"
+},
+
         {
           title: "Motion Toolkit — Neon Lower Thirds",
           category: "Motion Design",
