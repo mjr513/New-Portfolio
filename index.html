@@ -669,6 +669,320 @@
       opacity:0.9;
     }
 
+
+    /* =========================
+       MOBILE RESPONSIVE POLISH
+       ========================= */
+    @media (max-width: 720px){
+      :root{
+        --pad: 14px;
+      }
+
+      body{
+        min-width: 0;
+      }
+
+      .wrap{
+        padding-top: 16px;
+        padding-bottom: 56px;
+      }
+
+      .navInner{
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .brand{
+        width: 100%;
+        min-width: 0;
+      }
+
+      .brandText b,
+      .brandText span{
+        overflow-wrap: anywhere;
+      }
+
+      .navLinks{
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+
+      .chip{
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+
+      .hero{
+        margin-top: 14px;
+        border-radius: 22px;
+      }
+
+      .heroGrid{
+        padding: 16px;
+        gap: 14px;
+      }
+
+      .title{
+        font-size: clamp(30px, 11vw, 42px);
+        line-height: 0.98;
+        overflow-wrap: anywhere;
+      }
+
+      .subtitle{
+        font-size: 13px;
+      }
+
+      .badge{
+        max-width: 100%;
+        align-items: flex-start;
+        white-space: normal;
+        line-height: 1.35;
+      }
+
+      .ctaRow{
+        align-items: stretch;
+      }
+
+      .btn{
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .terminal{
+        min-height: 170px;
+      }
+
+      .terminalBody{
+        font-size: 11px;
+      }
+
+      .section{
+        margin-top: 16px;
+        padding-top: 14px;
+      }
+
+      .sectionHeader{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .hint{
+        line-height: 1.35;
+      }
+
+      .panelPad{
+        padding: 14px;
+      }
+
+      .toolbar{
+        align-items: stretch;
+      }
+
+      .filters{
+        width: 100%;
+      }
+
+      .pill{
+        padding: 7px 9px;
+        font-size: 11px;
+      }
+
+      .search{
+        width: 100%;
+        min-width: 0;
+      }
+
+      .search input{
+        min-width: 0;
+      }
+
+      .card{
+        min-height: 0;
+      }
+
+      .thumb{
+        height: 150px;
+      }
+
+      .cardBody{
+        padding: 11px;
+      }
+
+      .cardTitle{
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      .resumeGrid{
+        gap: 10px;
+      }
+
+      .timeline{
+        padding: 14px;
+      }
+
+      .tlItem{
+        grid-template-columns: 16px 1fr;
+        gap: 10px;
+      }
+
+      .tlTitle{
+        line-height: 1.25;
+      }
+
+      .tlDesc{
+        font-size: 12px;
+      }
+
+      .matrix{
+        padding: 14px;
+        gap: 10px;
+      }
+
+      .block{
+        padding: 11px;
+      }
+
+      #contact .panelPad{
+        align-items: stretch !important;
+      }
+
+      #contact .panelPad > div:last-child{
+        width: 100%;
+      }
+
+      #contact .linkBtn{
+        flex: 1 1 calc(50% - 10px);
+        justify-content: center;
+      }
+
+      .modal{
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+      }
+
+      .modalCard{
+        margin: 10px 0;
+      }
+
+      .modalTop{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+
+      .modalBody{
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .preview{
+        min-height: 190px;
+      }
+
+      .modalTitle{
+        font-size: 16px;
+        line-height: 1.2;
+      }
+
+      .modalDesc{
+        font-size: 13px;
+      }
+
+      .modalLinks .linkBtn{
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px){
+      :root{
+        --pad: 12px;
+      }
+
+      .navInner{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .logoMark{
+        width: 31px;
+        height: 31px;
+        border-radius: 10px;
+        flex: 0 0 auto;
+      }
+
+      .brandText b{
+        font-size: 14px;
+      }
+
+      .brandText span{
+        font-size: 10px;
+        line-height: 1.25;
+      }
+
+      .navLinks{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .chip{
+        justify-content: center;
+        padding: 7px 6px;
+        gap: 6px;
+      }
+
+      .chip .dot{
+        width: 6px;
+        height: 6px;
+      }
+
+      .heroGrid{
+        padding: 14px;
+      }
+
+      .heroBadges{
+        gap: 8px;
+      }
+
+      .badge{
+        font-size: 10.5px;
+        padding: 7px 9px;
+      }
+
+      .terminalTop{
+        font-size: 10px;
+        line-height: 1.25;
+      }
+
+      .terminalBody{
+        font-size: 10.5px;
+      }
+
+      .thumb{
+        height: 135px;
+      }
+
+      .cardMeta,
+      .modalMeta{
+        gap: 6px;
+      }
+
+      .tag{
+        padding: 4px 7px;
+      }
+
+      #contact .linkBtn{
+        flex-basis: 100%;
+      }
+    }
+
+
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       .fx-scanlines::after{ animation:none; }
@@ -754,7 +1068,7 @@
     <section class="section" id="resume" aria-label="Resume">
       <div class="sectionHeader">
         <h2 class="h2">Resume</h2>
-        <div class="hint">Timeline + skills console generated from your data.</div>
+        <div class="hint"></div>
       </div>
 
       <div class="resumeGrid">
@@ -785,7 +1099,7 @@
     <section class="section" id="contact" aria-label="Contact">
       <div class="sectionHeader">
         <h2 class="h2">Contact</h2>
-        <div class="hint">Edit links in the CONFIG object inside the script.</div>
+        <div class="hint"></div>
       </div>
 
       <div class="panel">
@@ -1351,7 +1665,7 @@
             Experience Timeline
           </div>
           <div style="margin-top:8px; color:#dcdcfe; line-height:1.55;">
-            A synthesized timeline view. Edit role descriptions inside <span style="font-family:var(--mono);">CONFIG.experience</span>.
+           <span style="font-family:var(--mono);"></span>.
           </div>
         </div>
         <div style="padding: 0 16px 16px;">
