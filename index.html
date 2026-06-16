@@ -421,6 +421,14 @@
         linear-gradient(135deg, rgba(138,91,255,0.14), rgba(255,79,216,0.08));
       border-bottom: 1px solid rgba(170,170,255,0.12);
       position:relative;
+      overflow:hidden;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter: saturate(1.06) contrast(1.04);
     }
     .thumb::after{
       content:"";
@@ -434,6 +442,7 @@
       );
       opacity:0.18;
       mix-blend-mode: overlay;
+      pointer-events:none;
     }
     .cardBody{ padding: 12px; }
     .cardTitle{
@@ -732,7 +741,7 @@
 
             <div class="search" role="search">
               <span style="font-family:var(--mono); color:var(--muted); font-size:12px;">SEARCH</span>
-              <input id="searchInput" type="text" placeholder="type keywords… (e.g., blender, UI, After Effects, Unreal)" aria-label="Search projects"/>
+              <input id="searchInput" type="text" placeholder="type keywords… (e.g., commercial, JCAN, Blender, VFX, game)" aria-label="Search projects"/>
             </div>
           </div>
 
@@ -784,8 +793,7 @@
           <div style="max-width: 70ch;">
             <div style="font-weight:900; text-transform:uppercase; letter-spacing:0.5px;">Let’s build something cinematic.</div>
             <div style="margin-top:6px; color:var(--muted); line-height:1.55;">
-              Use the buttons to open your site, LinkedIn, Instagram, or email.
-              Replace placeholder URLs with your real project links (Behance, Vimeo, ArtStation, GitHub, itch.io, etc.).
+              Use the buttons to open my site, LinkedIn, Instagram, or email.
             </div>
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:10px;">
@@ -841,8 +849,7 @@
         email: "mailto:milorobanofficial@gmail.com"
       },
 
-      // Resume-derived timeline (from your provided resume image) — edit descriptions as you like.
-      // Source: Milo_Resume_official.pdf page 1. (Cited in the chat response.)
+      // Resume-derived timeline.
       experience: [
         {
           role: "Freelance Graphic & Motion Designer + Video Editor",
@@ -965,84 +972,150 @@
         "Discord"
       ],
 
-      // Portfolio Projects (PLACEHOLDERS) — replace with your real work.
-      // Tip: Use 'image' for a thumbnail (local file path or URL). Otherwise it uses a neon abstract preview.
+      // Portfolio Projects — real work links only.
       projects: [
         {
-          title: "Cinematic Campaign Poster Series",
-          category: "Graphic Design",
-          tags: ["Branding", "Print", "Color Grade"],
-          year: "2026",
-          blurb: "A movie-poster-inspired campaign graphic system: typography hierarchy, atmosphere, and cinematic grading.",
-          image: "",
-          links: [
-            { label: "Case Study", url: "#" },
-            { label: "Final Exports", url: "#" }
-          ],
-          spotlight: "hot"
-        },
-        {
-          title: "Motion Toolkit — Neon Lower Thirds",
-          category: "Motion Design",
-          tags: ["After Effects", "Templates", "Broadcast"],
-          year: "2025",
-          blurb: "Reusable lower-thirds pack with modular timing controls, neon accents, and clean info hierarchy.",
-          image: "",
-          links: [
-            { label: "Video Reel", url: "#" }
-          ],
-          spotlight: "cool"
-        },
-        {
-          title: "Synthwave Portfolio UI (This Site)",
+          title: "Celona for City Council Website",
           category: "Web Design",
-          tags: ["HTML/CSS/JS", "UI/UX", "Responsive"],
+          tags: ["Campaign Site", "Frontend", "Political"],
           year: "2026",
-          blurb: "Single-file interactive portfolio with filters, modal capsules, and resume timeline generation.",
+          blurb: "Designed and built a campaign website for Celona for City Council, focused on clear voter-facing messaging, responsive layout, and campaign credibility.",
           image: "",
           links: [
-            { label: "GitHub", url: "#" },
-            { label: "Live", url: "#" }
-          ],
-          spotlight: "cool"
+            { label: "Open Website", url: "https://crcelona.com/" }
+          ]
         },
         {
-          title: "Drone Operator Simulator — HUD Concept",
-          category: "Game Design",
-          tags: ["Unreal Engine", "HUD", "UX"],
-          year: "2024–2025",
-          blurb: "A realistic operator HUD direction: telemetry, target feedback loops, and interaction affordances.",
-          image: "",
-          links: [
-            { label: "Design Doc", url: "#" },
-            { label: "Gameplay Clip", url: "#" }
-          ],
-          spotlight: "hot"
-        },
-        {
-          title: "The Shining Hallway — Blender Scene Study",
+          title: "Blender Stretching Room Project",
           category: "3D Modeling",
-          tags: ["Blender", "Lighting", "Materials"],
-          year: "2025–2026",
-          blurb: "Environment recreation study focused on mood lighting, materials, and set dressing accuracy.",
+          tags: ["Blender", "Interior", "Lighting"],
+          year: "2025",
+          blurb: "A 3D environment study built in Blender, centered on room staging, lighting, materials, and spatial composition.",
           image: "",
           links: [
-            { label: "Render Set", url: "#" },
-            { label: "Breakdown", url: "#" }
-          ],
-          spotlight: "cool"
+            { label: "View Project", url: "https://www.instagram.com/p/DFZKtCVJe6P/?img_index=1" }
+          ]
         },
         {
-          title: "Brand System — Nonprofit Mentorship",
-          category: "Graphic Design",
-          tags: ["Logos", "Systems", "Social"],
-          year: "2025",
-          blurb: "A consistent visual system for a mentorship program: typography, color rules, and social templates.",
+          title: "JCAN Website",
+          category: "Web Design",
+          tags: ["Nonprofit", "Frontend", "Civic"],
+          year: "2026",
+          blurb: "Designed and developed the website for Jewish Community Action Network, supporting the organization’s public-facing communications and civic resources.",
           image: "",
           links: [
-            { label: "Brand Kit", url: "#" }
-          ],
-          spotlight: ""
+            { label: "Open Website", url: "https://jcan4oc.org/" }
+          ]
+        },
+        {
+          title: "Graphic For Game",
+          category: "Graphic Design",
+          tags: ["Social", "Political", "Visual Messaging"],
+          year: "2024",
+          blurb: "Graphic I built for a game I am developing with my friend",
+          image: "",
+          links: [
+            { label: "View Graphic", url: "https://www.instagram.com/p/DC-vu1sJ9Ap/" }
+          ]
+        },
+        {
+          title: "Commercial Production — Spot 01",
+          category: "Commercial",
+          tags: ["Production", "Editing", "Client Video"],
+          year: "2025",
+          blurb: "Commercial video work combining production execution, post-production editing, pacing, and client-facing polish.",
+          image: "https://img.youtube.com/vi/Gtd34D-YomU/hqdefault.jpg",
+          links: [
+            { label: "Watch Commercial", url: "https://www.youtube.com/watch?v=Gtd34D-YomU" }
+          ]
+        },
+        {
+          title: "Commercial Production — Spot 02",
+          category: "Commercial",
+          tags: ["Production", "Editing", "Client Video"],
+          year: "2025",
+          blurb: "Commercial video work focused on clean structure, visual rhythm, and effective brand presentation.",
+          image: "https://img.youtube.com/vi/rDqd9Mgt6ps/hqdefault.jpg",
+          links: [
+            { label: "Watch Commercial", url: "https://www.youtube.com/watch?v=rDqd9Mgt6ps" }
+          ]
+        },
+        {
+          title: "Commercial Production — Spot 03",
+          category: "Commercial",
+          tags: ["Production", "Editing", "Client Video"],
+          year: "2025",
+          blurb: "Commercial production and edit work built for concise storytelling, smooth pacing, and polished delivery.",
+          image: "https://img.youtube.com/vi/84e4clwwJSk/hqdefault.jpg",
+          links: [
+            { label: "Watch Commercial", url: "https://www.youtube.com/watch?v=84e4clwwJSk" }
+          ]
+        },
+        {
+          title: "Long-Form Video Edit",
+          category: "Video",
+          tags: ["Editing", "YouTube", "Storytelling"],
+          year: "2025",
+          blurb: "A long-form video project emphasizing sequencing, narrative clarity, audio-visual rhythm, and viewer retention.",
+          image: "https://img.youtube.com/vi/4SuMeo_V65g/hqdefault.jpg",
+          links: [
+            { label: "Watch Video", url: "https://www.youtube.com/watch?v=4SuMeo_V65g" }
+          ]
+        },
+        {
+          title: "Short-Form Video Edit",
+          category: "Video",
+          tags: ["Short Form", "Vertical", "Social"],
+          year: "2025",
+          blurb: "A short-form social video edited for quick hook, tight pacing, and mobile-first viewing.",
+          image: "https://img.youtube.com/vi/cPcB4ESMgwc/hqdefault.jpg",
+          links: [
+            { label: "Watch Short", url: "https://youtube.com/shorts/cPcB4ESMgwc?feature=share" }
+          ]
+        },
+        {
+          title: "Post-Production VFX Video",
+          category: "VFX",
+          tags: ["After Effects", "Compositing", "Post"],
+          year: "2025",
+          blurb: "Post-production VFX work focused on compositing, cleanup, visual enhancement, and polished final delivery.",
+          image: "https://img.youtube.com/vi/xtXPhCYvKFw/hqdefault.jpg",
+          links: [
+            { label: "Watch VFX Video", url: "https://youtu.be/xtXPhCYvKFw" }
+          ]
+        },
+        {
+          title: "Commercial Production — Spot 04",
+          category: "Commercial",
+          tags: ["Production", "Editing", "Client Video"],
+          year: "2025",
+          blurb: "Commercial video work built around a concise message, clean visual execution, and professional post-production.",
+          image: "https://img.youtube.com/vi/NVXtz5NWIXI/hqdefault.jpg",
+          links: [
+            { label: "Watch Commercial", url: "https://youtu.be/NVXtz5NWIXI" }
+          ]
+        },
+        {
+          title: "Video Editing Project",
+          category: "Video",
+          tags: ["Editing", "YouTube", "Post"],
+          year: "2025",
+          blurb: "A video editing project centered on pacing, structure, shot selection, and polished final output.",
+          image: "https://img.youtube.com/vi/YT9CvbA9x9M/hqdefault.jpg",
+          links: [
+            { label: "Watch Video", url: "https://youtu.be/YT9CvbA9x9M" }
+          ]
+        },
+        {
+          title: "Game Design Project",
+          category: "Game Design",
+          tags: ["Gameplay", "Systems", "Design"],
+          year: "2025",
+          blurb: "A game design project showcasing interactive systems, gameplay structure, and player-facing experience design.",
+          image: "https://img.youtube.com/vi/iXimNA7RdVc/hqdefault.jpg",
+          links: [
+            { label: "Watch Gameplay", url: "https://youtu.be/iXimNA7RdVc" }
+          ]
         }
       ]
     };
@@ -1097,7 +1170,7 @@
       "Loading modules: [GRAPHIC] [MOTION] [WEB] [3D] [GAME]",
       "Parsing resume data → Timeline rendered.",
       "Project capsules online. Filters armed.",
-      "Tip: Replace placeholders in CONFIG.projects with real links & images.",
+      "Real project links loaded. Filters armed.",
       "Status: READY"
     ];
 
@@ -1171,16 +1244,17 @@
       }
 
       grid.innerHTML = list.map((p, idx) => {
-        const spot = p.spotlight === "hot" ? "hot" : (p.spotlight === "cool" ? "cool" : "");
-        const topTag = spot ? `<span class="tag ${spot}">${spot.toUpperCase()}</span>` : "";
         const tags = (p.tags || []).slice(0,2).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+        const thumb = p.image
+          ? `<div class="thumb hasImage"><img src="${escapeHtml(p.image)}" alt="" loading="lazy"/></div>`
+          : `<div class="thumb"></div>`;
+
         return `
           <article class="card" data-idx="${idx}" tabindex="0" aria-label="Open project ${escapeHtml(p.title)}">
-            <div class="thumb"></div>
+            ${thumb}
             <div class="cardBody">
               <h3 class="cardTitle">${escapeHtml(p.title)}</h3>
               <div class="cardMeta">
-                ${topTag}
                 <span class="tag">${escapeHtml(p.category)}</span>
                 <span class="tag">${escapeHtml(p.year || "")}</span>
                 ${tags}
